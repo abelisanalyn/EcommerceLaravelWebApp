@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Tangerine:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Register custom fonts */
+@font-face {
+    font-family: 'The Silver Editorial';
+    src: local('The Silver Editorial Italic'), local('Cormorant Garamond');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Old Fashion Script Ltd';
+    src: local('Old Fashion Script'), local('Tangerine');
+    font-style: italic;
+}
+
+/* Global background styling */
+:root {
+    --gabbitot-blue: #0052CC;
+    --cream-bg: #F5F1ED;
+    --text-dark: #2C2C2C;
+    --border-light: #E0DCD8;
+}
+
+body, html {
+    background-color: var(--cream-bg);
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.02) 2px,
+            rgba(0, 0, 0, 0.02) 4px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.02) 2px,
+            rgba(0, 0, 0, 0.02) 4px
+        );
+    color: var(--text-dark);
+}
+
+/* Main content areas */
+.gabbitot-bg, 
+.auth-container,
+.dashboard-container,
+.page-container,
+main {
+    background-color: var(--cream-bg);
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.02) 2px,
+            rgba(0, 0, 0, 0.02) 4px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.02) 2px,
+            rgba(0, 0, 0, 0.02) 4px
+        );
+}
+
+/* Typography */
+.silver-editorial {
+    font-family: 'The Silver Editorial', 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gabbitot-blue);
+    letter-spacing: 0.05em;
+}
+
+.old-fashion-script {
+    font-family: 'Old Fashion Script Ltd', 'Tangerine', cursive;
+    font-style: italic;
+    color: var(--gabbitot-blue);
+    font-weight: 700;
+}
+
+/* Page headers */
+h1, h2, h3 {
+    color: var(--gabbitot-blue);
+}
+
+h1 {
+    font-family: 'The Silver Editorial', 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 3rem;
+    letter-spacing: 0.08em;
+    font-weight: normal;
+}
+
+h2 {
+    font-family: 'The Silver Editorial', 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2rem;
+    letter-spacing: 0.06em;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: 'The Silver Editorial', 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+}
+
+/* Cards and containers */
+.card, .modal-content {
+    background-color: white;
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Buttons */
+.btn-primary, .btn-primary-button {
+    background-color: var(--gabbitot-blue);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary-button:hover {
+    background-color: #003d99;
+    box-shadow: 0 2px 8px rgba(0, 82, 204, 0.3);
+}
+
+.btn-secondary, .btn-secondary-button {
+    background-color: var(--cream-bg);
+    color: var(--gabbitot-blue);
+    border: 1px solid var(--gabbitot-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover, .btn-secondary-button:hover {
+    background-color: var(--gabbitot-blue);
+    color: white;
+}
+
+.btn-danger {
+    background-color: #DC2626;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #B91C1C;
+}
+
+/* Input fields and text inputs */
+.input-text, input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    background-color: white;
+    border: 1px solid var(--border-light);
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    font-family: inherit;
+    color: var(--text-dark);
+    transition: border-color 0.3s ease;
+}
+
+.input-text:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--gabbitot-blue);
+    box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+}
+
+.input-error {
+    border-color: #DC2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.input-error-text {
+    color: #DC2626;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Navigation */
+nav, .navbar {
+    background-color: white;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--gabbitot-blue);
+    background-color: var(--cream-bg);
+}
+
+.nav-link.active {
+    color: var(--gabbitot-blue);
+    border-bottom: 2px solid var(--gabbitot-blue);
+}
+
+/* Dropdowns */
+.dropdown, .dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-link {
+    color: var(--text-dark);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-link:hover {
+    background-color: var(--cream-bg);
+    color: var(--gabbitot-blue);
+}
+
+.dropdown-menu {
+    background-color: white;
+    border: 1px solid var(--border-light);
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 50;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modal-close {
+    color: var(--text-dark);
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: var(--gabbitot-blue);
+}
+
+/* Responsive Navigation */
+.responsive-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .responsive-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Auth Session styling */
+.auth-session {
+    background-color: white;
+    border: 1px solid var(--border-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Application Logo */
+.app-logo {
+    font-family: 'The Silver Editorial', 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gabbitot-blue);
+    font-size: 1.875rem;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Links */
+a {
+    color: var(--gabbitot-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #003d99;
+    text-decoration: underline;
+}
+
+/* Alerts and notifications */
+.alert {
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+}
+
+.alert-danger {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FECACA;
+}
+
+.alert-success {
+    background-color: #DCFCE7;
+    color: #166534;
+    border: 1px solid #BBEF63;
+}
+
+.alert-warning {
+    background-color: #FEF3C7;
+    color: #92400E;
+    border: 1px solid #FCD34D;
+}
